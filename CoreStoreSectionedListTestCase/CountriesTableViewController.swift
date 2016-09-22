@@ -11,9 +11,10 @@ import CoreStore
 
 class CountriesTableViewController: UITableViewController {
 
-    let countries: ListMonitor<Country> = CoreStore.monitorList(
+    let countries: ListMonitor<Country> = CoreStore.monitorSectionedList(
         From(Country),
-        OrderBy(.Ascending("name"))
+        SectionBy("continent.name"),
+        OrderBy(.Ascending("continent.name"))
     )
 
     override func viewDidLoad() {
@@ -25,12 +26,16 @@ class CountriesTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return countries.numberOfSections()
     }
 
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String {
+        let section = countries.sectionInfoAtIndex(section)
+        return section.name
+    }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return countries.numberOfObjects()
+        return countries.numberOfObjectsInSection(section)
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -101,3 +106,16 @@ extension CountriesTableViewController: ListObjectObserver {
     }
 
 }
+
+extension CountriesTableViewController: ListSectionObserver {
+
+    func listMonitor(monitor: ListMonitor<Country>, didInsertSection sectionInfo: NSFetchedResultsSectionInfo, toSectionIndex sectionIndex: Int) {
+        self.tableView.insertSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Automatic)
+    }
+
+    func listMonitor(monitor: ListMonitor<Country>, didDeleteSection sectionInfo: NSFetchedResultsSectionInfo, fromSectionIndex sectionIndex: Int) {
+        self.tableView.deleteSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Automatic)
+    }
+
+}
+
