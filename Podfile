@@ -5,6 +5,6 @@ target 'CoreStoreSectionedListTestCase' do
   # Comment this line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for CoreStoreSectionedListTestCase
+  pod 'CoreStore', '2.1.0'
 
 end
