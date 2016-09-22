@@ -19,6 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+
+        if CoreStore.queryValue(From(Country), Select<Int>(.Count("name"))) == 0 {
+            seedDatabase()
+        }
         return true
     }
 
@@ -44,5 +48,64 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func seedDatabase() {
+        let countries = [
+            "Africa": [
+                "Ivory Coast",
+                "South Africa"
+            ],
+            "Europe": [
+                "France",
+                "Germany",
+                "Spain",
+                "UK"
+            ],
+            "Asia": [
+                "China",
+                "Japan",
+            ]
+        ]
+
+        print("Seeding database…")
+        for (continentName, countryNames) in countries {
+            CoreStore.beginAsynchronous { (transaction) -> Void in
+
+                // Importing continent
+                let continent = transaction.create(Into(Continent))
+                continent.name = continentName
+
+                transaction.commit{ (result) -> Void in
+                    switch result {
+                    case .Success:
+
+                        // Importing country
+                        for countryName in countryNames {
+                            let continent = CoreStore.fetchOne(From(Continent), Where("name == %@", continentName))!
+                            CoreStore.beginAsynchronous { (transaction) -> Void in
+                                let continent = transaction.fetchExisting(continent)!
+                                let country = transaction.create(Into(Country))
+                                country.continent = continent
+                                country.name = countryName
+
+                                transaction.commit{ (result) -> Void in
+                                    switch result {
+                                    case .Success:
+                                        break
+                                    case .Failure(let error):
+                                        print(error)
+                                    }
+                                }
+                                
+                            }
+                        }
+
+                    case .Failure(let error):
+                        print(error)
+                    }
+                }
+            }
+
+        }
+    }
 }
 
