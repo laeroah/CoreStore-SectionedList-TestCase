@@ -13,7 +13,6 @@
 		1A5783C61D93E59000FEF7D0 /* CoreStoreSectionedListTestCase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1A5783C41D93E59000FEF7D0 /* CoreStoreSectionedListTestCase.xcdatamodeld */; };
 		1A5783C81D93E59000FEF7D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A5783C71D93E59000FEF7D0 /* Assets.xcassets */; };
 		1A5783CB1D93E59000FEF7D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A5783C91D93E59000FEF7D0 /* LaunchScreen.storyboard */; };
-		1A5783D31D93E86200FEF7D0 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 1A5783D21D93E86200FEF7D0 /* Podfile */; };
 		EE23C5AFED5EBB5288292570 /* Pods_CoreStoreSectionedListTestCase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D851DAC9776F46992D6F3A4 /* Pods_CoreStoreSectionedListTestCase.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +25,6 @@
 		1A5783C71D93E59000FEF7D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A5783CA1D93E59000FEF7D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A5783CC1D93E59000FEF7D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1A5783D21D93E86200FEF7D0 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		8D851DAC9776F46992D6F3A4 /* Pods_CoreStoreSectionedListTestCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoreStoreSectionedListTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D74C04EF25A19AFD1877AD0A /* Pods-CoreStoreSectionedListTestCase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreStoreSectionedListTestCase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoreStoreSectionedListTestCase/Pods-CoreStoreSectionedListTestCase.debug.xcconfig"; sourceTree = "<group>"; };
 		FE54977E2FBF19E6F0185D15 /* Pods-CoreStoreSectionedListTestCase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreStoreSectionedListTestCase.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoreStoreSectionedListTestCase/Pods-CoreStoreSectionedListTestCase.release.xcconfig"; sourceTree = "<group>"; };
@@ -47,7 +45,6 @@
 		1A5783B11D93E59000FEF7D0 = {
 			isa = PBXGroup;
 			children = (
-				1A5783D21D93E86200FEF7D0 /* Podfile */,
 				1A5783BC1D93E59000FEF7D0 /* CoreStoreSectionedListTestCase */,
 				1A5783BB1D93E59000FEF7D0 /* Products */,
 				2A5CA65E4E5C37C624A8ABFB /* Pods */,
@@ -158,7 +155,6 @@
 			files = (
 				1A5783CB1D93E59000FEF7D0 /* LaunchScreen.storyboard in Resources */,
 				1A5783C81D93E59000FEF7D0 /* Assets.xcassets in Resources */,
-				1A5783D31D93E86200FEF7D0 /* Podfile in Resources */,
 				1A5783C31D93E59000FEF7D0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
