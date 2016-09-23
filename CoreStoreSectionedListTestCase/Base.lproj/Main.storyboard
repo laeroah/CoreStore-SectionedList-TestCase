@@ -18,7 +18,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1rN-rk-qAx" id="3wk-OC-x0B">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -28,11 +28,45 @@
                             <outlet property="delegate" destination="i5g-tR-GVb" id="p8C-rh-2Pp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Countries" id="Pdf-4o-ehK"/>
+                    <navigationItem key="navigationItem" title="Countries" id="Pdf-4o-ehK">
+                        <barButtonItem key="rightBarButtonItem" title="GO" id="5bl-dd-HFC">
+                            <connections>
+                                <segue destination="5XU-XH-QkQ" kind="show" id="DMG-sv-hbm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="48M-hh-82Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1764" y="92.203898050974516"/>
+        </scene>
+        <!--Countries Table View Controller-->
+        <scene sceneID="WKi-1G-kgQ">
+            <objects>
+                <tableViewController id="5XU-XH-QkQ" customClass="CountriesTableViewController" customModule="CoreStoreSectionedListTestCase" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7Sh-At-mk2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="countryCell" id="kf4-Oq-Xtz">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kf4-Oq-Xtz" id="s1k-kt-Kct">
+                                    <frame key="frameInset" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="5XU-XH-QkQ" id="8s0-Fr-dhl"/>
+                            <outlet property="delegate" destination="5XU-XH-QkQ" id="R64-z3-4c9"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mru-qh-Z6O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2577" y="92"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fKO-5m-uKe">
